@@ -57,9 +57,9 @@ def test_capitalize_negative(input_str, expected):
 
 @pytest.mark.parametrize(
     "input_str , expected",[
-        (" File", "ile"),
-        (" _Cat", "Cat"),
-        ("   test123","test"),
+        ("", ""),               
+        ("777", "777"),         
+        ("Sky ", "Sky "),
     ]
 )
 def test_trim_negative(input_str,expected):
@@ -67,9 +67,9 @@ def test_trim_negative(input_str,expected):
 
 @pytest.mark.parametrize(
     "input_str, input_symbol, expected",[
-        ("123457","9", True),
-        ("tEST%@$&","*", True),
-        ("Hello world !", "5", True),
+        ("123457", "9", False),         
+        ("tEST%@$&", "*", False),       
+        ("Hello", "h", False),
     ]
 )
 def test_contains_negative(input_str,input_symbol,expected):
@@ -77,9 +77,9 @@ def test_contains_negative(input_str,input_symbol,expected):
 
 @pytest.mark.parametrize(
     "input_str, input_symbol, expected",[
-        ("Testb123","e","Test123"),
-        ("Hello world","Hello","world"),
-        ("Pyt@hon","@"," "),
+        ("Test123", "z", "Test123"),   
+        ("Hello", "world", "Hello"),
+        ("Python", "", "Python"),
     ]
 )
 def test_delete_symbol_negative(input_str, input_symbol, expected):
